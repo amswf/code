@@ -5,10 +5,10 @@ function initPageLink(clickTrackers, collectError, lp) {
         if (clickTrackers && typeof clickTrackers === "object" && clickTrackers.length) {
             for (var i = 0; i < clickTrackers.length; i++) {
                 if (window.navigator.sendBeacon) {
-                    navigator.sendBeacon(clickTrackers[i]+ `&sdk_event_id=${eventId}`);
+                    navigator.sendBeacon(clickTrackers[i]);
                 } else {
                     var img = new Image();
-                    img.src = clickTrackers[i]+ `&sdk_event_id=${eventId}`;
+                    img.src = clickTrackers[i];
                 }
             }
         }
